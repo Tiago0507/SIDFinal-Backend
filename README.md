@@ -2,6 +2,11 @@
 
 # Backend de Aplicación de Arrendamiento de Equipos Tecnológicos
 
+## Miembros
+- Juan David Calderón Salamanca
+- Santiago Escobar León
+- Santiago Valencia García
+
 ## Descripción
 
 Este backend es parte de una aplicación web diseñada para una empresa de servicios de tecnología que permite a sus clientes ver los equipos que tienen alquilados y registrar nuevas solicitudes de arrendamiento. El sistema se conecta a una base de datos PostgreSQL donde se almacenan los contratos de arrendamiento, los clientes y los equipos disponibles para arrendar.
