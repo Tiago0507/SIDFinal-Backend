@@ -1,0 +1,34 @@
+[
+    {
+      "_id": "SPEC001",
+      "product_id": "PROD001",
+      "detailed_specs": {
+        "processor": {
+          "model": "Intel Core i7-1270P",
+          "cores": 12,
+          "threads": 16,
+          "base_clock": "2.2 GHz",
+          "turbo_clock": "4.8 GHz"
+        },
+        "memory": {
+          "type": "DDR5",
+          "speed": "4800 MHz",
+          "max_capacity": "32GB"
+        },
+        "storage": {
+          "type": "NVMe SSD",
+          "interface": "PCIe 4.0",
+          "read_speed": "7000 MB/s",
+          "write_speed": "5000 MB/s"
+        }
+      },
+      "benchmarks": [
+        {
+          "name": "PCMark 10",
+          "score": 5432,
+          "date_tested": "2024-01-20"
+        }
+      ],
+      "certifications": ["Energy Star", "EPEAT Gold"]
+    }
+  ]

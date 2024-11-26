@@ -1,0 +1,33 @@
+[
+    {
+      "_id": "INV001",
+      "product_id": "PROD001",
+      "inventory_code": "LT-2024-001",
+      "serial_number": "LNV123456789",
+      "status": "available",
+      "condition": "new",
+      "purchase_date": "2024-01-15",
+      "warranty_end": "2027-01-15",
+      "location": "Bodega Principal",
+      "maintenance_history": []
+    },
+    {
+      "_id": "INV002",
+      "product_id": "PROD001",
+      "inventory_code": "LT-2024-002",
+      "serial_number": "LNV123456790",
+      "status": "rented",
+      "condition": "new",
+      "purchase_date": "2024-01-15",
+      "warranty_end": "2027-01-15",
+      "location": "Cliente TechForce",
+      "maintenance_history": [
+        {
+          "date": "2024-02-01",
+          "type": "preventive",
+          "description": "Revisión inicial",
+          "technician": "Juan Técnico"
+        }
+      ]
+    }
+  ]

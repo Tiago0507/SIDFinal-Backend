@@ -1,0 +1,63 @@
+[
+    {
+      "_id": "RR001",
+      "request_id": "REQ-2024-001",
+      "client_nit": "900456123",
+      "contact_id": "C001",
+      "items": [
+        {
+          "product_id": "PROD001",
+          "quantity": 2,
+          "rental_period": {
+            "start_date": "2024-02-01",
+            "end_date": "2024-08-01"
+          },
+          "price_agreement": 400000.00
+        }
+      ],
+      "notes": "Solicitud para área de desarrollo",
+      "delivery_address": {
+        "street": "Calle 100 #15-45",
+        "city": "Bogotá",
+        "state": "Bogotá",
+        "zip": "110111"
+      },
+      "status": "approved",
+      "request_date": "2024-01-25"
+    },
+    {
+      "_id": "RR002",
+      "request_id": "REQ-2024-002",
+      "client_nit": "901234567",
+      "contact_id": "C002",
+      "items": [
+        {
+          "product_id": "PROD001",
+          "quantity": 5,
+          "rental_period": {
+            "start_date": "2024-03-01",
+            "end_date": "2024-09-01"
+          },
+          "price_agreement": 375000.00
+        },
+        {
+          "product_id": "PROD002",
+          "quantity": 1,
+          "rental_period": {
+            "start_date": "2024-03-01",
+            "end_date": "2024-09-01"
+          },
+          "price_agreement": 2000000.00
+        }
+      ],
+      "notes": "Equipos para nueva sede",
+      "delivery_address": {
+        "street": "Carrera 80 #35-21",
+        "city": "Medellín",
+        "state": "Antioquia",
+        "zip": "050021"
+      },
+      "status": "pending",
+      "request_date": "2024-01-28"
+    }
+  ]

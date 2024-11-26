@@ -1,0 +1,29 @@
+[
+    {
+      "_id": "CAT001",
+      "name": "Laptops",
+      "description": "Computadores portátiles empresariales",
+      "specs_template": {
+        "required": ["processor", "ram", "storage", "screen_size"],
+        "optional": ["graphics", "battery_life", "webcam", "ports"]
+      }
+    },
+    {
+      "_id": "CAT002",
+      "name": "Desktop PCs",
+      "description": "Computadores de escritorio",
+      "specs_template": {
+        "required": ["processor", "ram", "storage"],
+        "optional": ["graphics", "optical_drive"]
+      }
+    },
+    {
+      "_id": "CAT003",
+      "name": "Servers",
+      "description": "Servidores empresariales",
+      "specs_template": {
+        "required": ["processor", "ram", "storage", "raid_support"],
+        "optional": ["redundant_power", "remote_management"]
+      }
+    }
+  ]
