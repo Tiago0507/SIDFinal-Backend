@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cython debug symbols
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# VS Code workspace files
+.vscode/
+.vscode/settings.json
+
+# Python-specific config and cache files
+*.env
+*.ini
+*.log
+*.sqlite3
+*.pycache/
+*.pytest_cache/
+*.mypy_cache/
+.cache/
+.dist-info/
+*.egg-info/
+
+# IDE-specific files
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test reports
+*.coverage
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# FastAPI-specific
+instance/
