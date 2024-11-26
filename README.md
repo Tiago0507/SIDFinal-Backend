@@ -139,7 +139,6 @@ El backend sigue la siguiente estructura de carpetas:
         <a href="https://www.postgresql.org/" target="_blank"> <img alt="PostgreSQL" src="https://cdn.svgporn.com/logos/postgresql.svg" height="60" width="60"> </a>
         <a href="https://www.mongodb.com/" target="_blank"> <img alt="MongoDB" src="https://cdn.svgporn.com/logos/mongodb.svg" height="60" width = "60"></a>
         <a href="https://www.python.org/" target="_blank"> <img alt="Python" src="https://cdn.svgporn.com/logos/python.svg" height="60" width="60"> </a>
-        <a href="https://bcrypt-generator.com/" target="_blank"> <img alt="bcrypt" src="https://cdn.svgporn.com/logos/bcrypt.svg" height="60" width="60"> </a>
     </p>
 </div>
 
