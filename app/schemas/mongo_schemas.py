@@ -1,6 +1,6 @@
 from typing import Dict, List, Optional
 from pydantic import BaseModel, Field
-from datetime import date
+from datetime import datetime
 
 # MongoDB Schemas
 class ProductSpecs(BaseModel):
@@ -29,7 +29,7 @@ class ProductBase(BaseModel):
     price: float
     stock: int
     warranty_period: str
-    release_date: date
+    release_date: datetime
     image_urls: List[str]
 
 class ProductCreate(ProductBase):
@@ -51,12 +51,12 @@ class InventoryItemBase(BaseModel):
     serial_number: str
     status: str  # available, rented, maintenance, retired
     condition: str
-    purchase_date: date
-    warranty_end: date
+    purchase_date: datetime
+    warranty_end: datetime
     location: str
 
 class MaintenanceRecord(BaseModel):
-    date: date
+    date: datetime
     type: str
     description: str
     technician: str
@@ -71,7 +71,7 @@ class InventoryItem(InventoryItemBase):
 class RentalItemRequest(BaseModel):
     product_id: str
     quantity: int
-    rental_period: Dict[str, date]  # {"start_date": date, "end_date": date}
+    rental_period: Dict[str, datetime]  # {"start_date": date, "end_date": date}
     price_agreement: Optional[float]
 
 class DeliveryAddress(BaseModel):
@@ -81,6 +81,8 @@ class DeliveryAddress(BaseModel):
     zip: str
 
 class RentalRequestBase(BaseModel):
+    request_id: str  
+    request_date: datetime
     client_nit: str
     contact_id: str
     items: List[RentalItemRequest]
@@ -90,7 +92,7 @@ class RentalRequestBase(BaseModel):
 
 class RentalRequest(RentalRequestBase):
     request_id: str
-    request_date: date
+    request_date: datetime
 
     class Config:
         from_attributes = True

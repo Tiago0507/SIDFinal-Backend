@@ -150,12 +150,16 @@ async def create_rental_request(
     current_user = Depends(get_current_user)
 ):
     new_request = request.dict()
-    new_request["request_date"] = datetime.now()
-    new_request["status"] = "pending"
-    
+    new_request["request_date"] = datetime.now()  # Añade la fecha actual
     result = await db.rental_requests.insert_one(new_request)
+
+    # Recupera el documento insertado
     created_request = await db.rental_requests.find_one({"_id": result.inserted_id})
     
+    # Mapea _id a request_id
+    created_request["request_id"] = str(created_request["_id"])
+    del created_request["_id"]  # Elimina _id si no es necesario
+
     return created_request
 
 @router.get("/rental-requests/{request_id}", response_model=RentalRequest)
