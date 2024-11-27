@@ -1,11 +1,17 @@
 from fastapi import APIRouter, HTTPException, Depends
 from typing import List, Optional
+from datetime import datetime
 from motor.motor_asyncio import AsyncIOMotorClient
-from ..dependencies import get_mongo_db
+from ..dependencies import get_mongo_db, get_current_user
 from ..schemas.mongo_schemas import (
     ProductBase,
     ProductCreate,
-    Product
+    Product,
+    ProductSpecs,
+    DetailedSpecs,
+    InventoryItem,
+    RentalRequest,
+    RentalRequestBase,
 )
 
 router = APIRouter(prefix="/catalog", tags=["Product Catalog"])
@@ -84,3 +90,102 @@ async def update_product(
         raise HTTPException(status_code=404, detail="Product not found")
     updated_product = await db.products.find_one({"_id": product_id})
     return updated_product
+
+@router.get("/specifications/{product_id}/detailed", response_model=DetailedSpecs)
+async def get_detailed_specifications(
+    product_id: str,
+    db: AsyncIOMotorClient = Depends(get_mongo_db)
+):
+    detailed_specs = await db.equipment_specifications.find_one({"product_id": product_id})
+    if not detailed_specs:
+        raise HTTPException(status_code=404, detail="Detailed specifications not found")
+    
+    return {
+        **detailed_specs["detailed_specs"],
+        "benchmarks": detailed_specs["benchmarks"],
+        "certifications": detailed_specs["certifications"]
+    }
+
+@router.get("/inventory", response_model=List[InventoryItem])
+async def get_inventory(
+    status: Optional[str] = None,
+    db: AsyncIOMotorClient = Depends(get_mongo_db)
+):
+    query = {}
+    if status:
+        query["status"] = status
+    inventory = await db.inventory.find(query).to_list(1000)
+    return inventory
+
+@router.get("/inventory/{inventory_id}", response_model=InventoryItem)
+async def get_inventory_item(
+    inventory_id: str,
+    db: AsyncIOMotorClient = Depends(get_mongo_db)
+):
+    item = await db.inventory.find_one({"_id": inventory_id})
+    if not item:
+        raise HTTPException(status_code=404, detail="Inventory item not found")
+    return item
+
+@router.get("/rental-requests", response_model=List[RentalRequest])
+async def get_rental_requests(
+    client_nit: Optional[str] = None,
+    status: Optional[str] = None,
+    db: AsyncIOMotorClient = Depends(get_mongo_db),
+    current_user = Depends(get_current_user)
+):
+    query = {}
+    if client_nit:
+        query["client_nit"] = client_nit
+    if status:
+        query["status"] = status
+    
+    requests = await db.rental_requests.find(query).to_list(1000)
+    return requests
+
+@router.post("/rental-requests", response_model=RentalRequest)
+async def create_rental_request(
+    request: RentalRequestBase,
+    db: AsyncIOMotorClient = Depends(get_mongo_db),
+    current_user = Depends(get_current_user)
+):
+    new_request = request.dict()
+    new_request["request_date"] = datetime.now()
+    new_request["status"] = "pending"
+    
+    result = await db.rental_requests.insert_one(new_request)
+    created_request = await db.rental_requests.find_one({"_id": result.inserted_id})
+    
+    return created_request
+
+@router.get("/rental-requests/{request_id}", response_model=RentalRequest)
+async def get_rental_request(
+    request_id: str,
+    db: AsyncIOMotorClient = Depends(get_mongo_db),
+    current_user = Depends(get_current_user)
+):
+    request = await db.rental_requests.find_one({"_id": request_id})
+    if not request:
+        raise HTTPException(status_code=404, detail="Rental request not found")
+    return request
+
+@router.patch("/rental-requests/{request_id}", response_model=RentalRequest)
+async def update_rental_request_status(
+    request_id: str,
+    status: str,
+    db: AsyncIOMotorClient = Depends(get_mongo_db),
+    current_user = Depends(get_current_user)
+):
+    if status not in ["pending", "approved", "rejected", "fulfilled"]:
+        raise HTTPException(status_code=400, detail="Invalid status")
+        
+    result = await db.rental_requests.update_one(
+        {"_id": request_id},
+        {"$set": {"status": status}}
+    )
+    
+    if result.modified_count == 0:
+        raise HTTPException(status_code=404, detail="Rental request not found")
+        
+    updated_request = await db.rental_requests.find_one({"_id": request_id})
+    return updated_request

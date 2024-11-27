@@ -94,3 +94,33 @@ class RentalRequest(RentalRequestBase):
 
     class Config:
         from_attributes = True
+        
+class DetailedProcessorSpecs(BaseModel):
+    model: str
+    cores: int
+    threads: int
+    base_clock: str
+    turbo_clock: str
+
+class DetailedMemorySpecs(BaseModel):
+    type: str
+    speed: str
+    max_capacity: str
+
+class DetailedStorageSpecs(BaseModel):
+    type: str
+    interface: str
+    read_speed: str
+    write_speed: str
+
+class Benchmark(BaseModel):
+    name: str
+    score: int
+    date_tested: str
+
+class DetailedSpecs(BaseModel):
+    processor: DetailedProcessorSpecs
+    memory: DetailedMemorySpecs
+    storage: DetailedStorageSpecs
+    benchmarks: List[Benchmark]
+    certifications: List[str]
