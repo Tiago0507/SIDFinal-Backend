@@ -60,26 +60,31 @@
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqdWFuLnBlcmV6IiwiZXhwIjoxNzMyOTE5OTU5fQ.WDDXLdx_FL0_FntushEMhM3475VIlEwWMmzoYG6-l_Y",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/info?id=1",
+					"raw": "{{base_url}}catalog/categories",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}catalog"
 					],
 					"path": [
-						"info"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1"
-						}
+						"categories"
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -97,26 +102,31 @@
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqdWFuLnBlcmV6IiwiZXhwIjoxNzMyOTE5OTU5fQ.WDDXLdx_FL0_FntushEMhM3475VIlEwWMmzoYG6-l_Y",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/info?id=1",
+					"raw": "{{base_url}}catalog/brands",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}catalog"
 					],
 					"path": [
-						"info"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1"
-						}
+						"brands"
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -134,26 +144,33 @@
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqdWFuLnBlcmV6IiwiZXhwIjoxNzMyOTE5OTU5fQ.WDDXLdx_FL0_FntushEMhM3475VIlEwWMmzoYG6-l_Y",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/info?id=1",
+					"raw": "{{base_url}}catalog/specifications/PROD001/detailed",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}catalog"
 					],
 					"path": [
-						"info"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1"
-						}
+						"specifications",
+						"PROD001",
+						"detailed"
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -171,26 +188,31 @@
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqdWFuLnBlcmV6IiwiZXhwIjoxNzMyOTE5OTU5fQ.WDDXLdx_FL0_FntushEMhM3475VIlEwWMmzoYG6-l_Y",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/info?id=1",
+					"raw": "{{base_url}}catalog/inventory",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}catalog"
 					],
 					"path": [
-						"info"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1"
-						}
+						"inventory"
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -268,6 +290,112 @@
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "catalog/rental-requests",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqdWFuLnBlcmV6IiwiZXhwIjoxNzMyOTE5OTU5fQ.WDDXLdx_FL0_FntushEMhM3475VIlEwWMmzoYG6-l_Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"request_id\": \"REQ-2024-003\",\r\n  \"request_date\": \"2024-01-25T00:00:00\",\r\n  \"client_nit\": \"900456123\",\r\n  \"contact_id\": \"C001\",\r\n  \"items\": [\r\n    {\r\n      \"product_id\": \"PROD001\",\r\n      \"quantity\": 1,\r\n      \"rental_period\": {\r\n        \"start_date\": \"2024-12-01\",\r\n        \"end_date\": \"2024-12-15\"\r\n      },\r\n      \"price_agreement\": 150.0\r\n    }\r\n  ],\r\n  \"notes\": \"Por favor entregar antes de las 10 am.\",\r\n  \"delivery_address\": {\r\n    \"street\": \"Calle 123 #45-67\",\r\n    \"city\": \"Bogotá\",\r\n    \"state\": \"Cundinamarca\",\r\n    \"zip\": \"110111\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}catalog/rental-requests",
+					"host": [
+						"{{base_url}}catalog"
+					],
+					"path": [
+						"rental-requests"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "catalog/rental-requests Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqdWFuLnBlcmV6IiwiZXhwIjoxNzMyOTE5OTU5fQ.WDDXLdx_FL0_FntushEMhM3475VIlEwWMmzoYG6-l_Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{base_url}}catalog/rental-requests/REQ-2024-002?status=approved",
+					"host": [
+						"{{base_url}}catalog"
+					],
+					"path": [
+						"rental-requests",
+						"REQ-2024-002"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "approved"
+						}
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
 		},
@@ -364,7 +492,8 @@
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -372,17 +501,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/info?id=1",
+					"raw": "{{base_url}}catalog/products/?brand=Dell",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}catalog"
 					],
 					"path": [
-						"info"
+						"products",
+						""
 					],
 					"query": [
 						{
-							"key": "id",
-							"value": "1"
+							"key": "brand",
+							"value": "Dell"
 						}
 					]
 				},
@@ -401,26 +531,32 @@
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqdWFuLnBlcmV6IiwiZXhwIjoxNzMyOTE5OTU5fQ.WDDXLdx_FL0_FntushEMhM3475VIlEwWMmzoYG6-l_Y",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/info?id=1",
+					"raw": "{{base_url}}catalog/products/PROD002",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}catalog"
 					],
 					"path": [
-						"info"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1"
-						}
+						"products",
+						"PROD002"
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -438,7 +574,8 @@
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -446,17 +583,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/info?id=1",
+					"raw": "{{base_url}}catalog/products/?brand=Dell&min_price=25000000",
 					"host": [
-						"{{base_url}}"
+						"{{base_url}}catalog"
 					],
 					"path": [
-						"info"
+						"products",
+						""
 					],
 					"query": [
 						{
-							"key": "id",
-							"value": "1"
+							"key": "brand",
+							"value": "Dell"
+						},
+						{
+							"key": "min_price",
+							"value": "25000000"
 						}
 					]
 				},
@@ -843,6 +985,54 @@
 		},
 		{
 			"name": "auth/token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "juan.perez",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "hashed_password_123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}auth/token",
+					"host": [
+						"{{base_url}}auth"
+					],
+					"path": [
+						"token"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "auth/signup",
 			"event": [
 				{
 					"listen": "test",

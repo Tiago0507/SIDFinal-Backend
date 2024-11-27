@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends
 from typing import List, Optional
 from datetime import datetime
+from bson import ObjectId
 from motor.motor_asyncio import AsyncIOMotorClient
 from ..dependencies import get_mongo_db, get_current_user
 from ..schemas.mongo_schemas import (
@@ -183,13 +184,15 @@ async def update_rental_request_status(
     if status not in ["pending", "approved", "rejected", "fulfilled"]:
         raise HTTPException(status_code=400, detail="Invalid status")
         
+    # Actualización del estado, usando request_id directamente como string
     result = await db.rental_requests.update_one(
-        {"_id": request_id},
+        {"request_id": request_id},  # Usamos request_id que es un string
         {"$set": {"status": status}}
     )
     
     if result.modified_count == 0:
         raise HTTPException(status_code=404, detail="Rental request not found")
         
-    updated_request = await db.rental_requests.find_one({"_id": request_id})
+    # Obtener el documento actualizado usando request_id
+    updated_request = await db.rental_requests.find_one({"request_id": request_id})  # Usamos request_id aquí también
     return updated_request
