@@ -4,17 +4,20 @@ from datetime import date
 
 # MongoDB Schemas
 class ProductSpecs(BaseModel):
-    processor: Optional[str]
-    ram: Optional[str]
-    storage: Optional[str]
-    graphics: Optional[str]
-    screen_size: Optional[str]
-    os: Optional[str]
-    battery_life: Optional[str]
-    camera: Optional[str]
-    printer_technology: Optional[str]
-    connectivity: Optional[List[str]]
-    other_specs: Optional[Dict[str, str]]
+    processor: Optional[str] = None
+    ram: Optional[str] = None
+    storage: Optional[str] = None
+    graphics: Optional[str] = None
+    screen_size: Optional[str] = None
+    os: Optional[str] = None
+    battery_life: Optional[str] = None
+    camera: Optional[str] = None
+    printer_technology: Optional[str] = None
+    connectivity: Optional[List[str]] = None
+    other_specs: Optional[Dict[str, str]] = None
+    raid_support: Optional[str] = None
+    redundant_power: Optional[str] = None
+    remote_management: Optional[str] = None
 
 class ProductBase(BaseModel):
     name: str

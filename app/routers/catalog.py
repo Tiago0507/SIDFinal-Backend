@@ -33,7 +33,7 @@ async def get_products(
     products = await db.products.find(query).to_list(1000)
     return products
 
-@router.get("/products/{product_id}", response_model=ProductBase) # con problemas
+@router.get("/products/{product_id}", response_model=ProductBase) 
 async def get_product(
     product_id: str,
     db: AsyncIOMotorClient = Depends(get_mongo_db)
