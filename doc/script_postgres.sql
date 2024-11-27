@@ -65,10 +65,10 @@ INSERT INTO role (role_id, role_name, description) VALUES
 
 -- Insertar Cuentas de Usuario (password_hash sería realmente un hash, aquí es ejemplo)
 INSERT INTO user_account (user_id, nit, username, password_hash, email) VALUES 
-('U001', '900456123', 'juan.perez', '$2b$12$zs5zxtwCm/aDjo1GGK/rPOyRHExoyudgz2SwyBRnGHu2MEnaouyKe', 'juan.perez@techforce.co'),
-('U002', '901234567', 'maria.gonzalez', '$2b$12$nLA16CffHDuwv12FmdkmkOZmBj2acHtUQn/.fnKIBTiTozVNBNJva', 'maria.gonzalez@medicare.com.co'),
-('U003', '800789123', 'carlos.rodriguez', '$2b$12$24sWUp6Qp07QzkFV1hHJXeEiDmmMQkfBC098JKEuPtMWTPgLllsLm', 'carlos.rodriguez@bankfinance.com.co'),
-('U004', '805555111', 'ana.martinez', '$2b$12$0XtqY0ptlL.FUXsCwIZvSeB15Y.BPtoz0KOIfU.aY7ek5Q9Gy5zOK', 'ana.martinez@edutech.edu.co');
+('U001', '900456123', 'juan.perez', '$2b$12$vRPQAh3cGgCHscy6MXOUO./zCSMJbvlg36rf98EEG7u/72bxtNg96', 'juan.perez@techforce.co'), --password: hash1234
+('U002', '901234567', 'maria.gonzalez', '$2b$12$ULTgjsjBD2Dpb63LlBSl8e/ZxXnGNaDMXW8i.WqFc.Z7HArBydOg.', 'maria.gonzalez@medicare.com.co'), --password: hash12345
+('U003', '800789123', 'carlos.rodriguez', '$2b$12$sN7bKZ.4vX00fPmywl6T0udggkWDXeN3BiQdwl9fJ3yBkGemZ20.m', 'carlos.rodriguez@bankfinance.com.co'), --password: hash123456
+('U004', '805555111', 'ana.martinez', '$2b$12$PHJCMmaNKwWMNWaDPbDOIOZFR8Om8zmgkF8IJb4yQLmejIcZrM2Iq', 'ana.martinez@edutech.edu.co'); --password: hash1234567
 
 -- Asignar Roles a Usuarios
 INSERT INTO user_role (user_id, role_id) VALUES 
