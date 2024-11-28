@@ -25,5 +25,23 @@
         "required": ["processor", "ram", "storage", "raid_support"],
         "optional": ["redundant_power", "remote_management"]
       }
+    },
+    {
+      "_id": "CAT004",
+      "name": "Networking",
+      "description": "Equipos de red",
+      "specs_template": {
+        "required": ["model", "ports", "throughput"],
+        "optional": ["management_interface", "poe_support"]
+      }
+    },
+    {
+      "_id": "CAT005",
+      "name": "Mobile Devices",
+      "description": "Dispositivos móviles empresariales",
+      "specs_template": {
+        "required": ["screen_size", "storage", "battery_life"],
+        "optional": ["cellular", "biometrics"]
+      }
     }
   ]

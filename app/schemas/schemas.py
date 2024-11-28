@@ -232,7 +232,8 @@ class DeliveryCertificateBase(BaseModel):
     notes: Optional[str]
 
 class DeliveryCertificateCreate(DeliveryCertificateBase):
-    contract_id: str
+    delivery_date: date
+    notes: Optional[str]
 
 class DeliveryCertificate(DeliveryCertificateBase):
     certificate_id: str

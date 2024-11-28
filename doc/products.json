@@ -62,5 +62,35 @@
       "warranty_period": "5 years",
       "release_date": "2024-01-15",
       "image_urls": ["/images/r750-1.jpg", "/images/r750-2.jpg"]
+    },
+    {
+      "_id": "PROD003",
+      "name": "Cisco Catalyst 9200",
+      "category": "CAT004",
+      "brand": "Cisco",
+      "model": "C9200-24P",
+      "description": "Switch empresarial de alto rendimiento",
+      "specs": {
+        "processor": "Dual Core ARM",
+        "ram": "8GB DDR4",
+        "storage": "16GB Flash",
+        "graphics": "N/A",
+        "screen_size": "N/A",
+        "os": "IOS-XE",
+        "battery_life": "N/A",
+        "camera": "N/A",
+        "printer_technology": "N/A",
+        "connectivity": ["24x 1GbE PoE+", "4x 10GbE SFP+"],
+        "other_specs": {
+          "switching_capacity": "128 Gbps",
+          "poe_budget": "370W",
+          "stacking": "Yes"
+        }
+      },
+      "price": 8500000,
+      "stock": 3,
+      "warranty_period": "Limited Lifetime",
+      "release_date": "2024-01-01",
+      "image_urls": ["/images/c9200-1.jpg", "/images/c9200-2.jpg"]
     }
   ]
