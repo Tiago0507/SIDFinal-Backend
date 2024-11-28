@@ -38,8 +38,25 @@ def create_category(
     db: Session = Depends(get_db),
     current_user: UserAccount = Depends(get_current_user)
 ):
-    db_category = CategoryModel(**category.dict())
+    # Generar un nuevo category_id con el formato CAT{número}
+    last_category = db.query(CategoryModel).order_by(CategoryModel.category_id.desc()).first()
+    if last_category:
+        last_num = int(last_category.category_id[3:])  # Extrae el número después de 'CAT'
+        new_num = last_num + 1
+    else:
+        new_num = 1
+    
+    new_category_id = f"CAT{new_num:03d}"  # Formato: CAT001, CAT002, etc.
+
+    # Crear la nueva categoría con el ID generado
+    db_category = CategoryModel(
+        category_id=new_category_id,
+        category_name=category.category_name,
+        description=category.description
+    )
+    
     db.add(db_category)
     db.commit()
     db.refresh(db_category)
+    
     return db_category
