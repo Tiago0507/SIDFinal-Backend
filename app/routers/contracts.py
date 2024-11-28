@@ -100,10 +100,14 @@ async def create_delivery_certificate(
     current_user: UserAccount = Depends(get_current_user)
 ):
     # 1. Verificar contrato
+    print(current_user.nit)
+    print(contract_id)
     contract = db.query(ContractModel).filter(
         ContractModel.contract_id == contract_id,
-        ContractModel.nit == current_user.nit
+        ContractModel.nit == certificate.nit
     ).first()
+    
+    print(contract)
     if not contract:
         raise HTTPException(status_code=404, detail="Contract not found")
 
@@ -112,7 +116,8 @@ async def create_delivery_certificate(
         certificate_id=f"DC-{datetime.now().strftime('%Y%m%d%H%M%S')}",
         contract_id=contract_id,
         delivery_date=certificate.delivery_date,
-        notes=certificate.notes
+        notes=certificate.notes,
+        nit=certificate.nit
     )
     db.add(db_certificate)
     db.commit()

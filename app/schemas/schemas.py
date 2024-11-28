@@ -234,10 +234,12 @@ class DeliveryCertificateBase(BaseModel):
 class DeliveryCertificateCreate(DeliveryCertificateBase):
     delivery_date: date
     notes: Optional[str]
+    nit: str
 
 class DeliveryCertificate(DeliveryCertificateBase):
     certificate_id: str
     contract_id: str
+    nit: str
 
     class Config:
         from_attributes = True

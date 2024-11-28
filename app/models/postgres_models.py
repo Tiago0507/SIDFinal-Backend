@@ -178,6 +178,7 @@ class DeliveryCertificate(Base):
     contract_id = Column(String(20), ForeignKey('contract.contract_id'))
     delivery_date = Column(Date, nullable=False)
     notes = Column(Text)
+    nit = Column(String(20), ForeignKey('company.nit'))
 
     # Relaciones
     contract = relationship("Contract", back_populates="delivery_certificates")

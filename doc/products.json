@@ -27,7 +27,7 @@
       "stock": 10,
       "warranty_period": "3 years",
       "release_date": "2024-01-01",
-      "image_urls": ["/images/x1carbon-1.jpg", "/images/x1carbon-2.jpg"]
+      "image_urls": ["https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "/images/x1carbon-2.jpg"]
     },
     {
       "_id": "PROD002",
@@ -61,7 +61,7 @@
       "stock": 5,
       "warranty_period": "5 years",
       "release_date": "2024-01-15",
-      "image_urls": ["/images/r750-1.jpg", "/images/r750-2.jpg"]
+      "image_urls": ["https://images.pexels.com/photos/2881224/pexels-photo-2881224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "/images/r750-2.jpg"]
     },
     {
       "_id": "PROD003",
@@ -91,6 +91,6 @@
       "stock": 3,
       "warranty_period": "Limited Lifetime",
       "release_date": "2024-01-01",
-      "image_urls": ["/images/c9200-1.jpg", "/images/c9200-2.jpg"]
+      "image_urls": ["https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "/images/c9200-2.jpg"]
     }
   ]
