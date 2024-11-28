@@ -1,34 +1,66 @@
 [
-    {
-      "_id": "SPEC001",
-      "product_id": "PROD001",
-      "detailed_specs": {
-        "processor": {
-          "model": "Intel Core i7-1270P",
-          "cores": 12,
-          "threads": 16,
-          "base_clock": "2.2 GHz",
-          "turbo_clock": "4.8 GHz"
-        },
-        "memory": {
-          "type": "DDR5",
-          "speed": "4800 MHz",
-          "max_capacity": "32GB"
-        },
-        "storage": {
-          "type": "NVMe SSD",
-          "interface": "PCIe 4.0",
-          "read_speed": "7000 MB/s",
-          "write_speed": "5000 MB/s"
-        }
+  {
+    "_id": "SPEC001",
+    "product_id": "PROD001",
+    "detailed_specs": {
+      "processor": {
+        "model": "Intel Core i7-1270P",
+        "cores": 12,
+        "threads": 16,
+        "base_clock": "2.2 GHz",
+        "turbo_clock": "4.8 GHz"
       },
-      "benchmarks": [
-        {
-          "name": "PCMark 10",
-          "score": 5432,
-          "date_tested": "2024-01-20"
-        }
-      ],
-      "certifications": ["Energy Star", "EPEAT Gold"]
-    }
-  ]
+      "memory": {
+        "type": "DDR5",
+        "speed": "4800 MHz",
+        "max_capacity": "32GB"
+      },
+      "storage": {
+        "type": "NVMe SSD",
+        "interface": "PCIe 4.0",
+        "read_speed": "7000 MB/s",
+        "write_speed": "5000 MB/s"
+      }
+    },
+    "benchmarks": [
+      {
+        "name": "PCMark 10",
+        "score": 5432,
+        "date_tested": "2024-01-20"
+      }
+    ],
+    "certifications": ["Energy Star", "EPEAT Gold"]
+  },
+  {
+    "_id": "SPEC002",
+    "product_id": "PROD002",
+    "detailed_specs": {
+      "processor": {
+        "model": "Intel Xeon Gold 6330",
+        "cores": 28,
+        "threads": 56,
+        "base_clock": "2.0 GHz",
+        "turbo_clock": "3.1 GHz"
+      },
+      "memory": {
+        "type": "DDR4 ECC",
+        "speed": "3200 MHz",
+        "max_capacity": "2TB"
+      },
+      "storage": {
+        "type": "Enterprise SSD",
+        "interface": "PCIe 4.0",
+        "read_speed": "6900 MB/s",
+        "write_speed": "4800 MB/s"
+      }
+    },
+    "benchmarks": [
+      {
+        "name": "SPECint_rate",
+        "score": 428,
+        "date_tested": "2024-01-15"
+      }
+    ],
+    "certifications": ["Energy Star", "EPEAT Gold", "TCO Certified"]
+  }
+]

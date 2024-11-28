@@ -53,19 +53,28 @@ async def create_contract_from_request(
     current_user: UserAccount = Depends(get_current_user)
 ):
     # 1. Verificar la solicitud
-    rental_request = await mongo_db.rental_requests.find_one({"_id": request_id})
+    rental_request = await mongo_db.rental_requests.find_one({"request_id": request_id})
     if not rental_request:
         raise HTTPException(status_code=404, detail="Rental request not found")
     if rental_request["status"] != "approved":
         raise HTTPException(status_code=400, detail="Rental request is not approved")
 
-    # 2. Crear el contrato
+    # 2. Crear el contrato manejando las fechas correctamente
+    start_date = rental_request["items"][0]["rental_period"]["start_date"]
+    end_date = rental_request["items"][0]["rental_period"]["end_date"]
+    
+    # Si las fechas ya son objetos datetime, las convertimos a date
+    if isinstance(start_date, datetime):
+        start_date = start_date.date()
+    if isinstance(end_date, datetime):
+        end_date = end_date.date()
+
     contract = ContractModel(
         contract_id=f"CTR-{datetime.now().strftime('%Y%m%d%H%M%S')}",
         nit=rental_request["client_nit"],
         contract_number=contract_create.contract_number,
-        start_date=datetime.strptime(rental_request["items"][0]["rental_period"]["start_date"], "%Y-%m-%d").date(),
-        end_date=datetime.strptime(rental_request["items"][0]["rental_period"]["end_date"], "%Y-%m-%d").date(),
+        start_date=start_date,
+        end_date=end_date,
         monthly_value=sum(item["price_agreement"] for item in rental_request["items"])
     )
     
