@@ -97,7 +97,7 @@ email-validator==2.2.0
 Para iniciar el servidor backend, ejecuta el siguiente comando desde la raíz del proyecto:
 
 ```bash
-uvicorn app:app --reload
+uvicorn app.main:app --reload
 ```
 
 Esto ejecutará el servidor FastAPI en modo de desarrollo (con recarga automática).
