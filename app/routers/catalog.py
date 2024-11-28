@@ -169,7 +169,7 @@ async def get_rental_request(
     db: AsyncIOMotorClient = Depends(get_mongo_db),
     current_user = Depends(get_current_user)
 ):
-    request = await db.rental_requests.find_one({"_id": request_id})
+    request = await db.rental_requests.find_one({"request_id": request_id})
     if not request:
         raise HTTPException(status_code=404, detail="Rental request not found")
     return request

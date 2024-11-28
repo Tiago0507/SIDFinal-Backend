@@ -75,7 +75,7 @@ async def create_contract_from_request(
         contract_number=contract_create.contract_number,
         start_date=start_date,
         end_date=end_date,
-        monthly_value=sum(item["price_agreement"] for item in rental_request["items"])
+        monthly_value=contract_create.monthly_value
     )
     
     db.add(contract)

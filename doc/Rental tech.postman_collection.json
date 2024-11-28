@@ -683,6 +683,47 @@
 			"response": []
 		},
 		{
+			"name": "catalog/products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"HP EliteBook 840 G9\",\r\n    \"category\": \"CAT001\",\r\n    \"brand\": \"HP\",\r\n    \"model\": \"EliteBook 840 G9\",\r\n    \"description\": \"Laptop empresarial de última generación\",\r\n    \"specs\": {\r\n        \"processor\": \"Intel Core i7-1280P\",\r\n        \"ram\": \"32GB DDR5\",\r\n        \"storage\": \"1TB NVMe SSD\",\r\n        \"screen_size\": \"14 inch WUXGA\",\r\n        \"graphics\": \"Intel Iris Xe\",\r\n        \"battery_life\": \"16 hours\",\r\n        \"os\": \"Windows 11 Pro\",\r\n        \"camera\": \"5MP IR\",\r\n        \"printer_technology\": \"N/A\",\r\n        \"connectivity\": [\r\n            \"WiFi 6E\",\r\n            \"Bluetooth 5.2\",\r\n            \"Thunderbolt 4\"\r\n        ],\r\n        \"other_specs\": {\r\n            \"weight\": \"1.36 kg\",\r\n            \"touchscreen\": \"No\",\r\n            \"fingerprint\": \"Yes\"\r\n        }\r\n    },\r\n    \"price\": 5200000,\r\n    \"stock\": 8,\r\n    \"warranty_period\": \"3 years\",\r\n    \"release_date\": \"2024-01-15\",\r\n    \"image_urls\": [\r\n        \"/images/elitebook840-1.jpg\",\r\n        \"/images/elitebook840-2.jpg\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}catalog/products",
+					"host": [
+						"{{base_url}}catalog"
+					],
+					"path": [
+						"products"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
 			"name": "catalog/products/?brand",
 			"event": [
 				{
@@ -849,6 +890,57 @@
 							"key": "category",
 							"value": "Laptops"
 						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "equipment/categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqdWFuLnBlcmV6IiwiZXhwIjoxNzMyNjYwMjI3fQ.910XAJP59m2R4JbHZ2D1VFL1C6J-iEDllOylDwffrtE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category_name\": \"Professional Workstations\",\r\n    \"description\": \"Estaciones de trabajo de alto rendimiento para diseño y modelado 3D\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}equipment/categories",
+					"host": [
+						"{{base_url}}equipment"
+					],
+					"path": [
+						"categories"
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -1144,54 +1236,6 @@
 		},
 		{
 			"name": "auth/token",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Successful POST request\", function () {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
-							"});",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "juan.perez",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "hashed_password_123",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{base_url}}auth/token",
-					"host": [
-						"{{base_url}}auth"
-					],
-					"path": [
-						"token"
-					]
-				},
-				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
-			},
-			"response": []
-		},
-		{
-			"name": "auth/token Copy",
 			"event": [
 				{
 					"listen": "test",
